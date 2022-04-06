@@ -1,0 +1,32 @@
+.weather-container {
+    text-align: center;
+    position: relative;
+}
+.src {
+    width: 100px;
+    height: 100px;
+}
+.weather {
+  font-size: 22px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  margin: 0;
+}
+
+.temp {
+  font-size: 72px;
+  position: absolute;
+  margin: 0;
+  top: 20%;
+  left: 100%;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 36px;
+  position: absolute;
+  margin: 0;
+  top: 17px;
+  left: 20px;
+}
