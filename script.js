@@ -3,7 +3,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=west%20lafayette&un
   console.log(data);
 
   var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-  var background = "https://www.publicdomainpictures.net/pictures/40000/velka/blue-clouds-background.jpg";
+  var background = "blue-clouds-background.JPG";
   var temp = Math.round(data.main.temp);
   var weather = data.weather[0].main;
   var name = data.name;
