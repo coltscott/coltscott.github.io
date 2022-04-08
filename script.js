@@ -11,7 +11,6 @@ $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=west%20lafayette&un
   $(".background").attr("src", background);
   $('.icon').attr('src', icon);
   $(".description").append(description);
-  $(".name").append(name);
   $(".temp").append(temp + "°");
   
 });

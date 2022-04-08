@@ -8,10 +8,11 @@
 }
 
 .icon {
+  position: fixed;
   width: 150px;
   height: 150px;
-  left: 15%;
-  top: 20%;
+  left: 1%;
+  top: 1%;
 }
 
 .description {
@@ -25,9 +26,9 @@
 
 .temp {
   font-size: 72px;
-  position: absolute;
+  position: fixed;
   margin: 0;
-  top: 20%;
+  top: 5%;
   left: 90%;
   font-weight: bold;
 }
@@ -49,4 +50,11 @@
     left: 50%;
     margin-left: -512px;
   }
+}
+
+html {
+  background: url(images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
