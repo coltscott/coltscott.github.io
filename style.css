@@ -10,23 +10,16 @@
 .icon {
   width: 150px;
   height: 150px;
-  left: 20%;
+  left: 15%;
   top: 20%;
 }
 
 .description {
+  text-align: center;
   font-size: 22px;
   position: fixed;
   top: 10%;
-  left: 40%;
-  margin: 0;
-}
-
-.weather {
-  font-size: 22px;
-  position: fixed;
-  top: 20%;
-  left: 48.5%;
+  left: 31%;
   margin: 0;
 }
 
