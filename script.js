@@ -1,4 +1,22 @@
+var button = document.querySelector('.submit')
+var inputValue = document.querySelector('inputValue')
+var name = document.querySelector('.name');
+var desc = document.querySelector('.desc');
+var temp = document.querySelector('.temp');
 
+if(button){
+button.addEventListener('click',function(){
+  fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=imperial&appid=c983b5a10bc8da951ebfd1ad2c147a89')
+  .then(response =>response.json())
+  .then(console.log(data))
+
+.catch(err => alert("Unrecognized City Name!"))
+})
+}
+else {
+  alert("Button invalid")
+}
+/*
 $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=west%20lafayette&units=imperial&appid=c983b5a10bc8da951ebfd1ad2c147a89", function(data) {
   console.log(data);
 
@@ -14,3 +32,4 @@ $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=west%20lafayette&un
   $(".temp").append(temp + "°");
   
 });
+*/
