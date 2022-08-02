@@ -59,9 +59,8 @@ input[type="button"] {
 
 .temp {
   font-size: 72px;
-  position: fixed;
-  margin: 0;
-  top: 5%;
+  position: relative;
+  margin: 15px;
   left: 90%;
   font-weight: bold;
 }
@@ -96,23 +95,22 @@ input[type="button"] {
   left: 0;
 }
 
-@media screen and (max-width: 1024px) {
+
+@media only screen and (max-width: 480px) {
   .background {
     left: 50%;
     margin-left: -512px;
   }
-}
 
-@media screen and (max-width: 375px) {
-  .background {
-    left: 50%;
-    margin-left: -512px;
+  .wind-speed-icon {
+    width: 25px;
+    height: 25px;
   }
 
   .icon {
     position: fixed;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     left: 1%;
     top: 1%;
     border: none;
@@ -120,38 +118,42 @@ input[type="button"] {
   }
 
   .temp {
-    font-size: 24px;
+    font-size: 32px;
     position: relative;
-    margin: 0;
-    top: 5%;
-    left: 75%;
+    margin: 10px;
+    left: 80%;
     font-weight: bold;
   }
 
   input[type="text"] {
     height: 10px;
-    width: 120px;
+    width: 250px;
     font-weight: bold;
-    font-size: x-large;
+    font-size: medium;
     border: none;
     border-radius: 4px;
     padding: 10px 10px;
   }
   
   input[type="button"] {
-    height: 14px;
-    width: 20px;
+    height: 28px;
+    width: 60px;
     font-weight: bold;
-    font-size: x-large;
+    font-size: medium;
     border: none;
     border-radius: 4px;
   }
 
   .description-container {
     text-align: center;
-    font-size: larger;
+    font-size: medium;
     font-weight: bolder;
     margin: 50px 0;
+  }
+
+  .input{
+    text-align: center;
+    margin: 150px 0 0 0;
   }
 }
 
