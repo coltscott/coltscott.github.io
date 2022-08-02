@@ -21,7 +21,7 @@ body {
   text-align: center;
   font-size: xx-large;
   font-weight: bolder;
-  margin: 100px 0;
+  margin: 50px 0;
 }
 
 input[type="text"] {
@@ -62,6 +62,18 @@ input[type="button"] {
   top: 5%;
   left: 90%;
   font-weight: bold;
+}
+
+.wind-speed-container {
+  font-size: large;
+  margin: 50px 0;
+  text-align: center;
+  border: none;
+}
+
+.wind-speed-icon {
+  width: 50px;
+  height: 50px;
 }
 
 .background { 
