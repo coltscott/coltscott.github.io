@@ -103,6 +103,58 @@ input[type="button"] {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .background {
+    left: 50%;
+    margin-left: -512px;
+  }
+
+  .icon {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    left: 1%;
+    top: 1%;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .temp {
+    font-size: 24px;
+    position: relative;
+    margin: 0;
+    top: 5%;
+    left: 75%;
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    height: 10px;
+    width: 120px;
+    font-weight: bold;
+    font-size: x-large;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+  }
+  
+  input[type="button"] {
+    height: 14px;
+    width: 20px;
+    font-weight: bold;
+    font-size: x-large;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .description-container {
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    margin: 50px 0;
+  }
+}
+
 html {
   background: url(blue-clouds-background.JPG) no-repeat center center fixed;
   background-size: cover;
