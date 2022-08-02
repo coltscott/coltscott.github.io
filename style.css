@@ -14,7 +14,7 @@ body {
 
 .input{
   text-align: center;
-  margin: 300px 0;
+  margin: 300px 0 0 0;
 }
 
 .description-container {
@@ -53,6 +53,8 @@ input[type="button"] {
   height: 150px;
   left: 1%;
   top: 1%;
+  border: none;
+  border-radius: 4px;
 }
 
 .temp {
@@ -66,7 +68,13 @@ input[type="button"] {
 
 .wind-speed-container {
   font-size: large;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
+  text-align: center;
+  border: none;
+}
+
+.feels-like {
+  font-size: large;
   text-align: center;
   border: none;
 }
