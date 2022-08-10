@@ -8,6 +8,7 @@
     <title>Weather App</title>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,26 +19,25 @@
        <img class="background"> 
     </div>
     <div class="top">
-        <p class="temp"></p>
-        <img class="icon">
-        
+      <p class="temp"></p>
+      <img class="icon">
     </div>
-       <div class="weather-container">
-        <p class="name"></p>
-        <div class="input">
-          <input type="text" id="inputValue" placeholder="Enter a City to Find the Weather">
-          <input type="button" id="submit" value="Search"> 
+    <div class="weather-container">
+      <p class="name"></p>
+      <canvas id="forecastChart" width="700" height="300"></canvas>
+      <div class="input">
+        <input type="text" id="inputValue" placeholder="Enter a City to Find the Weather">
+        <input type="button" id="submit" value="Search"> 
+      </div>
+
+      <div class="description-container">
+        <p class="description"></p>
+        <div class="wind-speed-container">
+          <p class="wind-speed"></p>
+          <img class="wind-speed-icon">
         </div>
-      
-        
-        <div class="description-container">
-          <p class="description"></p>
-          <div class="wind-speed-container">
-            <p class="wind-speed"></p>
-            <img class="wind-speed-icon">
-          </div>
-          <p class="feels-like"></p>
-        </div>
+        <p class="feels-like"></p>
+      </div>
         
         
       </div> 

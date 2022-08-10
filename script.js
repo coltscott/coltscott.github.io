@@ -6,6 +6,8 @@ var temp = document.querySelector('.temp');
 var iconic = document.querySelector('.icon');
 var wind = document.querySelector('.wind-speed');
 var feels = document.querySelector('.feels-like');
+var canvasElem = document.getElementById("forecastChart");
+var config = {}
 $('.icon').attr('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARKISBFy9j6rW3qTcdGSdzwUkCd3AEeMPMQ&usqp=CAU");
 $('.wind-speed-icon').attr('src', "wind-clipart-wind-flow.png");
 $('.wind-speed-icon').css('opacity', 0);
@@ -33,7 +35,43 @@ function buttonEvent() {
   })
   
 .catch(err => alert("Unrecognized City Name!"))
-  
+  fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=imperial&appid=c983b5a10bc8da951ebfd1ad2c147a89')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    const plugin = {
+      id: 'custom_canvas_background_color',
+      beforeDraw: (chart) => {
+        const {ctx} = chart;
+        ctx.save();
+        ctx.globalCompositeOperation = 'destination-over';
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, chart.width, chart.height);
+        ctx.restore();
+      }
+    };
+    var config = {
+      type: "bar",
+      data: {labels: [data.list[0].dt_txt, data.list[1].dt_txt, data.list[2].dt_txt, data.list[3].dt_txt, data.list[4].dt_txt, data.list[5].dt_txt, data.list[6].dt_txt, data.list[7].dt_txt],
+      datasets: [
+        {label: "Temperature",
+          data: [Math.round(data.list[0].main.temp),
+          Math.round(data.list[1].main.temp),
+          Math.round(data.list[2].main.temp),
+          Math.round(data.list[3].main.temp),
+          Math.round(data.list[4].main.temp),
+          Math.round(data.list[5].main.temp),
+          Math.round(data.list[6].main.temp),
+          Math.round(data.list[7].main.temp)],
+          backgroundColor: ["rgba(200,0,0,1"],
+          borderColor: ["rgba(0,0,0,1"],
+          borderWidth: 1
+        }]
+      },
+      plugins: [plugin],
+    };
+    var forecastChart = new Chart(canvasElem, config)
+  })
 }
 
 button.addEventListener('click', buttonEvent);
