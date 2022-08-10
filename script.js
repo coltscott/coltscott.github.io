@@ -35,6 +35,7 @@ function buttonEvent() {
   })
   
 .catch(err => alert("Unrecognized City Name!"))
+
   fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=imperial&appid=c983b5a10bc8da951ebfd1ad2c147a89')
   .then(response => response.json())
   .then(data => {
@@ -52,7 +53,7 @@ function buttonEvent() {
     };
     var config = {
       type: "bar",
-      data: {labels: [data.list[0].dt_txt, data.list[1].dt_txt, data.list[2].dt_txt, data.list[3].dt_txt, data.list[4].dt_txt, data.list[5].dt_txt, data.list[6].dt_txt, data.list[7].dt_txt],
+      data: {labels: [data.list[0].dt_txt.substring(11), data.list[1].dt_txt.substring(11), data.list[2].dt_txt.substring(11), data.list[3].dt_txt.substring(11), data.list[4].dt_txt.substring(11), data.list[5].dt_txt.substring(11), data.list[6].dt_txt.substring(11), data.list[7].dt_txt.substring(11)],
       datasets: [
         {label: "Temperature",
           data: [Math.round(data.list[0].main.temp),
