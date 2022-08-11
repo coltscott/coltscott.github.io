@@ -7,7 +7,21 @@ var iconic = document.querySelector('.icon');
 var wind = document.querySelector('.wind-speed');
 var feels = document.querySelector('.feels-like');
 var canvasElem = document.getElementById("forecastChart");
-var config = {}
+var config = {
+  type: "bar",
+  data: {labels: [],
+  datasets: [
+    {label: "Temperature",
+      data: [],
+      backgroundColor: ["rgba(200,0,0,1"],
+      borderColor: ["rgba(0,0,0,1"],
+      borderWidth: 1
+    }]
+  }
+};
+var forecastChart = new Chart(canvasElem, config);
+
+
 $('.icon').attr('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARKISBFy9j6rW3qTcdGSdzwUkCd3AEeMPMQ&usqp=CAU");
 $('.wind-speed-icon').attr('src', "wind-clipart-wind-flow.png");
 $('.wind-speed-icon').css('opacity', 0);
@@ -40,6 +54,7 @@ function buttonEvent() {
   .then(response => response.json())
   .then(data => {
     console.log(data);
+    forecastChart.destroy();
     const plugin = {
       id: 'custom_canvas_background_color',
       beforeDraw: (chart) => {
@@ -71,7 +86,9 @@ function buttonEvent() {
       },
       plugins: [plugin],
     };
-    var forecastChart = new Chart(canvasElem, config)
+    
+    forecastChart = new Chart(canvasElem, config);
+    forecastChart.update();
   })
 }
 
